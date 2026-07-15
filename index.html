@@ -1,174 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>T Crochet</title>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family: Georgia, serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
 }
 
 body{
-    background:#F8F2EE;
-    color:#4F4038;
-    line-height:1.7;
+
+background:#FAF6F2;
+
+font-family:'Poppins',sans-serif;
+
+color:#5A4A42;
+
+line-height:1.7;
+
 }
+
+
+/* HEADER */
 
 header{
-    background:#DFA6B4;
-    color:white;
-    text-align:center;
-    padding:70px 20px;
+
+background:linear-gradient(to bottom,#F5D9E2,#FAF6F2);
+
+padding:90px 25px;
+
+text-align:center;
+
 }
 
-header h1{
-    font-size:3rem;
-    letter-spacing:2px;
+
+h1{
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:65px;
+
+letter-spacing:2px;
+
+color:#73584F;
+
 }
 
-header p{
-    margin-top:10px;
-    font-style:italic;
+
+.tagline{
+
+margin-top:12px;
+
+font-size:20px;
+
+font-style:italic;
+
+color:#866A61;
+
 }
 
-nav{
-    background:#F3E3DD;
-    text-align:center;
-    padding:15px;
+
+button{
+
+margin-top:35px;
+
+background:#D99CA9;
+
+border:none;
+
+padding:14px 35px;
+
+border-radius:50px;
+
+font-size:17px;
+
+color:white;
+
+cursor:pointer;
+
+transition:.3s;
+
 }
 
-nav a{
-    text-decoration:none;
-    color:#6E564C;
-    margin:0 18px;
-    font-weight:bold;
+
+button:hover{
+
+background:#C88494;
+
+transform:translateY(-3px);
+
 }
+
+
+/* SECTIONS */
 
 section{
-    max-width:1000px;
-    margin:auto;
-    padding:70px 25px;
+
+max-width:1100px;
+
+margin:auto;
+
+padding:70px 25px;
+
 }
 
+
 h2{
-    color:#C57C8F;
-    margin-bottom:25px;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:42px;
+
+margin-bottom:25px;
+
+color:#9C6C79;
+
 }
 
 .gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+
+gap:25px;
+
+margin-top:30px;
+
 }
+
 
 .card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+background:white;
+
+border-radius:18px;
+
+overflow:hidden;
+
+box-shadow:0 8px 18px rgba(0,0,0,.08);
+
+transition:.3s;
+
 }
+
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
 
 .card img{
-    width:100%;
-    height:230px;
-    object-fit:cover;
+
+width:100%;
+
+height:260px;
+
+object-fit:cover;
+
+display:block;
+
 }
+
+
+.card h3{
+
+padding:18px 18px 8px;
+
+font-family:'Cormorant Garamond',serif;
+
+font-size:28px;
+
+color:#73584F;
+
+}
+
 
 .card p{
-    padding:15px;
-    text-align:center;
+
+padding:0 18px 18px;
+
+font-size:15px;
+
 }
 
-footer{
-    background:#DFA6B4;
-    color:white;
-    text-align:center;
-    padding:25px;
+
+
+/* CONTACT */
+
+.contact{
+
+text-align:center;
+
+background:#FFF9F7;
+
+border-radius:20px;
+
 }
+
+
+.contact a{
+
+display:block;
+
+margin:12px 0;
+
+text-decoration:none;
+
+color:#7D5D66;
+
+font-size:18px;
+
+}
+
+
+.contact a:hover{
+
+color:#D99CA9;
+
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+background:#EFCFD7;
+
+padding:30px;
+
+text-align:center;
+
+font-size:15px;
+
+margin-top:60px;
+
+}
+
+
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+h1{
+
+font-size:48px;
+
+}
+
+
+h2{
+
+font-size:34px;
+
+}
+
+}
+
 </style>
+
 </head>
+
 
 <body>
 
+
 <header>
+
 <h1>T Crochet</h1>
-<p>Handmade crochet • Cozy • Vintage • Timeless</p>
+
+<p class="tagline">Handmade with love</p>
+
+
+<button onclick="document.getElementById('gallery').scrollIntoView()">
+
+Explore My Creations
+
+</button>
+
+
 </header>
 
-<nav>
-<a href="#about">About</a>
-<a href="#gallery">Gallery</a>
-<a href="#patterns">Patterns</a>
-<a href="#contact">Contact</a>
-</nav>
+    <section>
 
-<section id="about">
 <h2>About</h2>
+
 <p>
-Welcome to T Crochet! I design handmade crochet pieces inspired by soft colors,
-flowers, and vintage charm. Here you'll find my creations, patterns, and tutorials.
+Welcome to T Crochet! I create handmade crochet pieces inspired by flowers, cozy textures, and timeless designs. Every piece is carefully made with creativity, patience, and love.
 </p>
+
 </section>
 
+
+
 <section id="gallery">
+
 <h2>My Creations</h2>
+
 
 <div class="gallery">
 
-<div class="card">
-<img src="images/bag1.jpg">
-<p>Crochet Bags</p>
-</div>
 
 <div class="card">
-<img src="images/flower.jpg">
-<p>Flowers</p>
-</div>
 
-<div class="card">
-<img src="images/amigurumi.jpg">
-<p>Amigurumi</p>
-</div>
+<img src="bag1.jpg" alt="Crochet Bag">
 
-<div class="card">
-<img src="images/home.jpg">
-<p>Home Décor</p>
-</div>
-
-</div>
-
-</section>
-
-<section id="patterns">
-<h2>Patterns</h2>
+<h3>Crochet Bags</h3>
 
 <p>
-✨ Free Patterns Coming Soon<br>
-🧶 Premium Patterns Coming Soon
+Handmade bags created with unique stitches and beautiful details.
 </p>
 
-</section>
+</div>
 
-<section id="contact">
 
-<h2>Contact</h2>
+
+<div class="card">
+
+<img src="flower1.jpg" alt="Crochet Flowers">
+
+<h3>Crochet Flowers</h3>
 
 <p>
-Instagram: @tcrochet<br>
-YouTube: T Crochet<br>
-Email: hello@tcrochet.com
+Soft handmade flowers inspired by nature and creativity.
 </p>
 
+</div>
+
+
+
+
+<div class="card">
+
+<img src="amigurumi1.jpg" alt="Crochet Amigurumi">
+
+<h3>Amigurumi</h3>
+
+<p>
+Cute handmade crochet characters and creative pieces.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="wearable1.jpg" alt="Crochet Wearables">
+
+<h3>Wearables</h3>
+
+<p>
+Crochet clothing pieces made with comfort and style.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="other1.jpg" alt="Other Crochet Items">
+
+<h3>Other Creations</h3>
+
+<p>
+A collection of different handmade crochet projects.
+</p>
+
+</div>
+
+
+
+
+<div class="card">
+
+<img src="rose1.jpg" alt="Crochet Rose">
+
+<h3>Rose Collection</h3>
+
+<p>
+Detailed crochet roses made with care and attention.
+</p>
+
+</div>
+
+
+</div>
+
 </section>
+
+
+
+
+<section class="contact" id="contact">
+
+<h2>Contact Me</h2>
+
+<p>
+Interested in a custom crochet order or want to ask a question?
+</p>
+
+
+<a href="https://instagram.com/yourusername">
+Instagram: @yourusername
+</a>
+
+
+<a href="mailto:youremail@example.com">
+Email: youremail@example.com
+</a>
+
+
+<a href="https://wa.me/yournumber">
+WhatsApp: Your Number
+</a>
+
+
+</section>
+
+
+
 
 <footer>
-© 2026 T Crochet • Handmade with love
+
+<p>
+© 2026 T Crochet. Handmade with love.
+</p>
+
 </footer>
 
+
 </body>
+
 </html>
