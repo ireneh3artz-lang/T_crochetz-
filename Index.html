@@ -1,4 +1,4 @@
-      <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -107,6 +107,9 @@ border-radius:18px;
 overflow:hidden;
 box-shadow:0 8px 18px rgba(0,0,0,.08);
 transition:.3s;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
 }
 
 
@@ -125,13 +128,14 @@ display:block;
 
 .see-more{
 display:inline-block;
-margin:0 18px 18px;
+margin:10px 18px 18px;
 padding:10px 18px;
 background:#D99CA9;
 color:white;
 text-decoration:none;
 border-radius:30px;
 transition:.3s;
+text-align:center;
 }
 
 .see-more:hover{
@@ -179,11 +183,13 @@ color:#73584F;
   border-radius:15px;
   font-size:12px;
   font-weight:500;
+  width:fit-content;
 }
 
+/* DEDICATED PRICE STYLING */
 .card .price-tag{
-  padding:5px 18px 0;
-  font-weight:bold;
+  padding:4px 18px 8px;
+  font-weight:700;
   color:#D99CA9;
   font-size:22px;
   display:block;
@@ -317,7 +323,7 @@ Welcome to T Crochet! I create handmade crochet pieces inspired by flowers, cozy
 <h2>Latest Shop Products</h2>
 
 <div id="cms-products" class="cms-product-grid">
-  <!-- Products added from CMS will automatically load here -->
+  <!-- Products added from CMS will automatically load here with prices -->
 </div>
 
 </section>
@@ -332,112 +338,89 @@ Welcome to T Crochet! I create handmade crochet pieces inspired by flowers, cozy
 
 
 <div class="card">
-
+<div>
 <img src="bag1.jpg" alt="Crochet Bag">
-
 <h3>Crochet Bags</h3>
-
-    <a href="bags.html" class="see-more">View All →</a>
-
+<div class="price-tag">From ₦8,000</div>
 <p>
 Handmade bags created with unique stitches and beautiful details.
 </p>
-
+</div>
+<a href="bags.html" class="see-more">View All →</a>
 </div>
 
 
 
 <div class="card">
-
+<div>
 <img src="flower5.jpg" alt="Crochet Flowers">
-
-
 <h3>Crochet Flowers</h3>
-
-<a href="flowers.html" class="see-more">View All →</a>
-
+<div class="price-tag">From ₦3,500</div>
 <p>
 Soft handmade flowers inspired by nature and creativity.
 </p>
-
+</div>
+<a href="flowers.html" class="see-more">View All →</a>
 </div>
 
 
 
 
 <div class="card">
-
+<div>
 <img src="amigurumi1.jpg" alt="Crochet Amigurumi">
-
 <h3>Amigurumi</h3>
-
-
-    <a href="amigurumi.html" class="see-more">View All →</a>
-
+<div class="price-tag">From ₦5,000</div>
 <p>
 Cute handmade crochet characters and creative pieces.
 </p>
-
+</div>
+<a href="amigurumi.html" class="see-more">View All →</a>
 </div>
 
 
 
 
 <div class="card">
-
+<div>
 <img src="wearable1.jpg" alt="Crochet Wearables">
-
-
-    <img src="wearable2.jpg">
-
-    
 <h3>Wearables</h3>
-
-    <a href="wearables.html" class="see-more">View All →</a>
-
+<div class="price-tag">From ₦12,000</div>
 <p>
 Crochet clothing pieces made with comfort and style.
 </p>
-
+</div>
+<a href="wearables.html" class="see-more">View All →</a>
 </div>
 
 
 
 
 <div class="card">
-
+<div>
 <img src="other1.jpg" alt="Other Crochet Items">
-
-    
-    <img src="other2.jpg">
-    
-
 <h3>Other Creations</h3>
-
-
-    <a href="other.html" class="see-more">View All →</a>
+<div class="price-tag">From ₦2,500</div>
 <p>
 A collection of different handmade crochet projects.
 </p>
-
+</div>
+<a href="other.html" class="see-more">View All →</a>
 </div>
 
 
 
 
 <div class="card">
-
+<div>
 <img src="rose1.jpg" alt="Crochet Rose">
-
 <h3>Rose Collection</h3>
-
-
-    <a href="roses.html" class="see-more">View All →</a>
-
+<div class="price-tag">From ₦4,000</div>
 <p>
 Detailed crochet roses made with care and attention.
 </p>
-
+</div>
+<a href="roses.html" class="see-more">View All →</a>
 </div>
 
 
@@ -510,7 +493,7 @@ Email: t.crochetz12@gmail.com
       console.log('GitHub API fetch failed, trying site fallback...');
     }
 
-    // Attempt 2: Local JSON Index fallback if GitHub API fails
+    // Attempt 2: Local JSON Index fallback
     if (filesToFetch.length === 0) {
       try {
         const localRes = await fetch('/content/products/index.json');
@@ -542,7 +525,7 @@ Email: t.crochetz12@gmail.com
           const bodyContent = parts.slice(2).join('---').trim();
           const product = jsyaml.load(yamlData) || {};
 
-          // Extract and format price safely
+          // Extract price value
           const rawPrice = product.price;
           const priceDisplay = (rawPrice !== undefined && rawPrice !== null && rawPrice !== '')
             ? `₦${Number(rawPrice).toLocaleString()}`
@@ -558,7 +541,10 @@ Email: t.crochetz12@gmail.com
               ${product.image ? `<img src="${product.image}" alt="${product.title || 'Product'}">` : ''}
               <h3>${product.title || 'Handmade Creation'}</h3>
               ${product.category ? `<span class="category-badge">${product.category}</span>` : ''}
+              
+              <!-- DEDICATED CMS PRICE DISPLAY -->
               <div class="price-tag">${priceDisplay}</div>
+
               ${bodyContent ? `<p>${bodyContent}</p>` : ''}
               <div style="padding: 0 18px 18px;">
                 <span class="see-more" style="display: inline-block; margin: 10px 0 0;">View Item ↗</span>
