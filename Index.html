@@ -588,47 +588,65 @@ Email: t.crochetz12@gmail.com
 <script>
   async function loadCMSProducts() {
     const container = document.getElementById('cms-products');
+    const repo = 'irene-h3artz/t_crochetz-';
+    const folderPath = 'content/products';
 
     try {
-      const response = await fetch('/content/products/index.json');
+      const treeRes = await fetch(`https://api.github.com/repos/${repo}/contents/${folderPath}`);
       
-      let productFiles = [];
-      if (response.ok) {
-        productFiles = await response.json();
-      } else {
-        container.innerHTML = '<p>No published products yet. Check back soon!</p>';
+      if (!treeRes.ok) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No published products yet.</p>';
+        return;
+      }
+
+      const files = await treeRes.json();
+      const mdFiles = files.filter(f => f.name.endsWith('.md'));
+
+      if (mdFiles.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No published products yet.</p>';
         return;
       }
 
       container.innerHTML = '';
 
-      for (const filePath of productFiles) {
-        const res = await fetch(filePath);
+      for (const file of mdFiles) {
+        const res = await fetch(file.download_url);
         if (!res.ok) continue;
 
         const rawText = await res.text();
         const parts = rawText.split('---');
 
-        if (parts.length >= 3) {
+        if (parts.length >= 2) {
           const yamlData = parts[1];
           const bodyContent = parts.slice(2).join('---').trim();
-          const product = jsyaml.load(yamlData);
+          const product = jsyaml.load(yamlData) || {};
+
+          const priceFormatted = product.price ? `₦${Number(product.price).toLocaleString()}` : 'Price on request';
 
           const card = document.createElement('div');
           card.className = 'card';
+          
+          // Link target opens the product image or file url in a separate browser tab
+          const targetUrl = product.image || file.html_url;
+
           card.innerHTML = `
-            <img src="${product.image || 'bag1.jpg'}" alt="${product.title}">
-            <h3>${product.title || 'Handmade Item'}</h3>
-            ${product.category ? `<span class="category-badge">${product.category}</span>` : ''}
-            <div class="price-tag">₦${Number(product.price || 0).toLocaleString()}</div>
-            <p>${bodyContent || ''}</p>
+            <a href="${targetUrl}" target="_blank" rel="noopener noreferrer" style="text-decoration: none; color: inherit; display: block;">
+              ${product.image ? `<img src="${product.image}" alt="${product.title || 'Handmade Creation'}">` : ''}
+              <h3>${product.title || 'Handmade Creation'}</h3>
+              ${product.category ? `<span class="category-badge">${product.category}</span>` : ''}
+              <div class="price-tag">${priceFormatted}</div>
+              ${bodyContent ? `<p>${bodyContent}</p>` : ''}
+              <div style="padding: 0 18px 18px;">
+                <span class="see-more" style="display: inline-block; margin: 10px 0 0;">View Item ↗</span>
+              </div>
+            </a>
           `;
           container.appendChild(card);
         }
       }
     } catch (err) {
-      console.error('Error fetching products:', err);
-      container.innerHTML = '<p>No published products yet. Check back soon!</p>';
+      console.error('Error loading products:', err);
+      container.innerHTML = '<p style="grid-column: 1/-1; text-align: center;">No published products yet.</p>';
     }
   }
 
