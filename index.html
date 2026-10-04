@@ -44,6 +44,21 @@ footer{background:#302338;color:#FAF2E8;padding:30px;text-align:center;font-size
 @keyframes falling{0%{top:-50px;transform:translateX(0) rotate(0)}100%{top:105vh;transform:translateX(70px) rotate(360deg)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;scroll-behavior:auto!important}}
 @media(max-width:700px){h1{font-size:48px}h2{font-size:34px}nav{gap:14px;padding:14px 12px}nav a{font-size:13px}.halloween-greeting h2{font-size:36px}header::before{font-size:22px}header::after{font-size:32px}}
+
+/* Nested keychain collections */
+.keychain-subcategories{margin:0 18px 18px;padding-top:12px;border-top:1px solid #EAD9CE}
+.keychain-subcategories h4{font-family:'Cormorant Garamond',serif;font-size:21px;color:#633B65;margin-bottom:10px}
+.keychain-subgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
+.keychain-subgrid a{min-width:0;text-align:center;text-decoration:none;color:#633B65;font-size:12px;font-weight:500}
+.keychain-subgrid img{width:100%;height:82px;object-fit:cover;border-radius:10px;display:block;margin-bottom:4px}
+.keychain-subgrid a:hover span{color:#D97732}
+
+
+/* Three photo slots for each Halloween collection */
+.halloween-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px;margin:10px 12px 4px}
+.halloween-photo-grid img{width:100%;height:112px;object-fit:cover;border-radius:10px;display:block;background:#F5E1D2}
+@media(max-width:700px){.halloween-photo-grid{gap:5px;margin-left:10px;margin-right:10px}.halloween-photo-grid img{height:90px}}
+
 </style>
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <script>
@@ -63,11 +78,10 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){win
 <div class="halloween-greeting"><div class="icons">🦇　🍂　🕸️</div><p class="spooky-small">A LITTLE BIT OF SPOOKY MAGIC</p><h2>Happy Halloween!</h2><p>Spooky stitches and handmade treats, made with love.</p><div class="icons">🎃　👻　🕸️</div></div>
 <h2 class="halloween-title">Halloween Collection</h2><p class="halloween-intro">Meet our cute and spooky handmade creations!</p>
 <div class="gallery halloween-gallery">
-<div class="card halloween-card"><div><img src="halloween.jpg" alt="Halloween crochet collection"><h3>Halloween Collection</h3><p>Explore our spooky handmade creations.</p></div><a href="halloween.html" class="see-more">View Collection →</a></div>
-<div class="card halloween-card"><div><img src="bat.jpg" alt="Crochet Halloween bat"><h3>Spooky Bats</h3><p>Little handmade bats with spooky charm.</p></div><a href="halloween.html#bat" class="see-more">View Collection →</a></div>
-<div class="card halloween-card"><div><img src="pumpkin.jpg" alt="Crochet pumpkin"><h3>Jack-o'-Lanterns</h3><p>Adorable pumpkins for a touch of Halloween magic.</p></div><a href="halloween.html#pumpkin" class="see-more">View Collection →</a></div>
-<div class="card halloween-card"><div><img src="skull.jpg" alt="Crochet skull"><h3>Little Skulls</h3><p>Spooky little creations for Halloween.</p></div><a href="halloween.html#skull" class="see-more">View Collection →</a></div>
-<div class="card halloween-card"><div><img src="ghost.jpg" alt="Crochet ghost"><h3>Friendly Ghosts</h3><p>Sweet little ghosts to haunt your collection.</p></div><a href="halloween.html#ghost" class="see-more">View Collection →</a></div>
+<div class="card halloween-card"><div><h3>Spooky Bats</h3><img src="bat1.jpg" alt="Crochet spooky bats" style="width:100%;height:260px;object-fit:cover;display:block"><p>Little handmade bats with spooky charm.</p></div><a href="bat.html" class="see-more">View Collection →</a></div>
+<div class="card halloween-card"><div><h3>Pumpkins</h3><img src="pumpkin1.jpg" alt="Crochet pumpkins" style="width:100%;height:260px;object-fit:cover;display:block"><p>Adorable handmade crochet pumpkins for Halloween.</p></div><a href="pumpkin.html" class="see-more">View Collection →</a></div>
+<div class="card halloween-card"><div><h3>Little Skulls</h3><img src="skull1.jpg" alt="Crochet little skulls" style="width:100%;height:260px;object-fit:cover;display:block"><p>Spooky little creations for Halloween.</p></div><a href="skull.html" class="see-more">View Collection →</a></div>
+<div class="card halloween-card"><div><h3>Friendly Ghosts</h3><img src="ghost1.jpg" alt="Crochet friendly ghosts" style="width:100%;height:260px;object-fit:cover;display:block"><p>Sweet little ghosts to haunt your collection.</p></div><a href="ghost.html" class="see-more">View Collection →</a></div>
 </div></section>
 <section id="about" class="about-section"><h2>About</h2><p>Welcome to T Crochet! I create handmade crochet pieces inspired by flowers, cozy textures, and timeless designs. Every piece is carefully made with creativity, patience, and love.</p></section>
 <section id="products"><h2>Latest Shop Products</h2><div id="cms-products" class="cms-product-grid"><!-- Products added from CMS will automatically load here with prices --></div></section>
@@ -78,6 +92,19 @@ if(window.netlifyIdentity){window.netlifyIdentity.on("init",user=>{if(!user){win
 <div class="card"><div><img src="wearable1.jpg" alt="Crochet Wearables"><h3>Wearables</h3><div class="price-tag">From ₦12,000</div><p>Crochet clothing pieces made with comfort and style.</p></div><a href="wearables.html" class="see-more">View All →</a></div>
 <div class="card"><div><img src="other1.jpg" alt="Other Crochet Items"><h3>Other Creations</h3><div class="price-tag">From ₦2,500</div><p>A collection of different handmade crochet projects.</p></div><a href="other.html" class="see-more">View All →</a></div>
 <div class="card"><div><img src="rose1.jpg" alt="Crochet Rose"><h3>Rose Collection</h3><div class="price-tag">From ₦4,000</div><p>Detailed crochet roses made with care and attention.</p></div><a href="roses.html" class="see-more">View All →</a></div>
+<div class="card"><div><img src="superhero1.jpg" alt="Crochet superhero characters"><h3>Superheroes</h3><p>Handmade heroes and character-inspired creations.</p></div><a href="superheroes.html" class="see-more">View All →</a></div>
+<div class="card"><div><img src="coaster1.jpg" alt="Crochet coasters"><h3>Coasters</h3><p>Useful handmade pieces for your home.</p></div><a href="coasters.html" class="see-more">View All →</a></div>
+<div class="card keychain-parent"><div><img src="keychain1.jpg" alt="Crochet keychains"><h3>Keychains</h3><p>Little crochet creations to take along with you.</p>
+<div class="keychain-subcategories">
+  <h4>Keychain Collections</h4>
+  <div class="keychain-subgrid">
+    <a href="food.html"><img src="food1.jpg" alt="Crochet food keychains"><span>Food Keychains</span></a>
+    <a href="animals.html"><img src="animal1.jpg" alt="Crochet animal keychains"><span>Animal Keychains</span></a>
+    <a href="flowers.html"><img src="flower5.jpg" alt="Crochet flower keychains"><span>Flower Keychains</span></a>
+  </div>
+</div>
+</div><a href="keychains.html" class="see-more">View All Keychains →</a></div>
+<div class="card"><div><img src="stuffed1.jpg" alt="Crochet stuffed animals"><h3>Stuffed Animals</h3><p>Soft, cuddly crochet friends made with love.</p></div><a href="stuffed-animals.html" class="see-more">View All →</a></div>
 </div></section>
 <section class="contact" id="contact"><h2>Contact Me</h2><p>Interested in a custom crochet order or want to ask a question?</p><a href="https://instagram.com/t_crochetz">Instagram: t_crochetz</a><a href="https://www.youtube.com/@t_crochetz">YouTube: @t_crochetz</a><a href="mailto:t.crochetz12@gmail.com">Email: t.crochetz12@gmail.com</a><a href="https://www.tiktok.com/@t_crochetz">TikTok: @t_crochetz</a></section>
 <footer><p>© 2026 T Crochet. Handmade with love.</p></footer>
