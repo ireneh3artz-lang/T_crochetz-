@@ -106,54 +106,41 @@ if (window.netlifyIdentity) {
 <section id="christmas" class="christmas-section">
   <div class="holly">❄ ✦ 🎄 ✦ ❄</div>
   <h2>Christmas Collection</h2>
-  <p class="section-intro">Tiny festive treasures, handmade with love. Choose a collection below to explore its designs.</p>
-  <div class="collection-banner">
-    <h3>Made for a Merry Little Christmas</h3>
-    <p>Festive reds, evergreen greens, snowy whites and golden details.</p>
-  </div>
+  <p class="section-intro">A little festive magic, handmade with love. Tap below to explore the individual collections.</p>
   <div class="gallery christmas-grid">
     <article class="card">
-      <img src="christmas-collection.jpg" alt="Christmas crochet collection preview" onerror="this.style.display='none'">
+      <img src="christmas-collection.jpg" alt="T Crochet Christmas collection preview" onerror="this.style.display='none'">
       <div class="card-content">
         <h3>Christmas Collection</h3>
-        <p>Explore festive crochet decorations and handmade holiday favourites.</p>
-        <a href="christmas.html" class="see-more">View Collection →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="gingerbread1.jpg" alt="Crochet gingerbread designs" onerror="this.style.display='none'">
-      <div class="card-content">
-        <h3>Gingerbread</h3>
-        <p>Sweet gingerbread-inspired crochet creations.</p>
-        <a href="gingerbread.html" class="see-more">View Gingerbread →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="snowflake1.jpg" alt="Crochet snowflake designs" onerror="this.style.display='none'">
-      <div class="card-content">
-        <h3>Snowflakes</h3>
-        <p>Delicate snowy details for a wintery handmade look.</p>
-        <a href="snowflakes.html" class="see-more">View Snowflakes →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="tree1.jpg" alt="Crochet Christmas tree designs" onerror="this.style.display='none'">
-      <div class="card-content">
-        <h3>Christmas Trees</h3>
-        <p>Little evergreen pieces full of festive charm.</p>
-        <a href="trees.html" class="see-more">View Trees →</a>
-      </div>
-    </article>
-    <article class="card">
-      <img src="candycane1.jpg" alt="Crochet candy cane designs" onerror="this.style.display='none'">
-      <div class="card-content">
-        <h3>Candy Canes</h3>
-        <p>Classic red-and-white Christmas sweetness in crochet form.</p>
-        <a href="candy-canes.html" class="see-more">View Candy Canes →</a>
+        <p>Discover gingerbread, snowflakes, Christmas trees, and candy canes.</p>
+        <button type="button" class="see-more collection-toggle" aria-expanded="false" aria-controls="christmas-subcollections" onclick="toggleChristmasCollections(this)">View Collection ↓</button>
+        <div id="christmas-subcollections" class="subcollections" hidden>
+          <a href="gingerbread.html">🍪 Gingerbread →</a>
+          <a href="snowflakes.html">❄️ Snowflakes →</a>
+          <a href="trees.html">🎄 Christmas Trees →</a>
+          <a href="candy-canes.html">🍬 Candy Canes →</a>
+        </div>
       </div>
     </article>
   </div>
 </section>
+
+<style>
+.subcollections{padding:0 18px 18px;display:grid;gap:9px}
+.subcollections[hidden]{display:none}
+.subcollections a{display:block;text-decoration:none;color:#174b35;background:#e3efe2;border-radius:12px;padding:10px 13px;font-size:14px;font-weight:500}
+.subcollections a:hover{background:#f5dce0;color:#a52635}
+.collection-toggle{width:100%;font-family:'Poppins',sans-serif;font-size:14px;margin:8px 0 14px}
+</style>
+<script>
+function toggleChristmasCollections(button){
+  const links=document.getElementById('christmas-subcollections');
+  const expanded=button.getAttribute('aria-expanded')==='true';
+  button.setAttribute('aria-expanded',String(!expanded));
+  links.hidden=expanded;
+  button.textContent=expanded?'View Collection ↓':'Hide Collections ↑';
+}
+</script>
 
 <section id="gallery">
   <h2>My Categories</h2>
