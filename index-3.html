@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>T Crochet | Christmas Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#fffaf0; --green:#174b35; --deep-green:#103b2a;
+  --red:#a52635; --bright-red:#c83b48; --gold:#d7ad58;
+  --pink:#f4dce0; --text:#51433b; --white:#fff;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{background:var(--cream);font-family:'Poppins',sans-serif;color:var(--text);line-height:1.7;overflow-x:hidden}
+nav{position:sticky;top:0;background:rgba(255,250,240,.96);backdrop-filter:blur(8px);padding:14px 18px;display:flex;justify-content:center;gap:clamp(12px,3vw,35px);flex-wrap:wrap;box-shadow:0 2px 12px #103b2a14;z-index:1000;border-bottom:1px solid #e8d8b8}
+nav a{text-decoration:none;color:var(--green);font-weight:600;font-size:14px;transition:.2s}
+nav a:hover{color:var(--red)}
+header{position:relative;text-align:center;padding:88px 22px 82px;background:radial-gradient(ellipse at top,#fff 0%,transparent 56%),linear-gradient(135deg,#e3efe2 0%,#fffaf0 48%,#f5dce0 100%);border-bottom:5px solid var(--gold);overflow:hidden}
+header:before,header:after{content:"✦";position:absolute;color:#c5a052;font-size:34px;opacity:.8}
+header:before{left:12%;top:25%}header:after{right:13%;bottom:22%}
+.eyebrow{display:inline-block;color:var(--red);background:#fff8e9;border:1px solid #e5c779;padding:6px 16px;border-radius:30px;font-size:12px;letter-spacing:2px;text-transform:uppercase}
+h1,h2,h3{font-family:'Cormorant Garamond',serif}
+h1{font-size:clamp(48px,8vw,76px);line-height:1.05;color:var(--green);letter-spacing:1px;margin-top:16px}
+.tagline{margin-top:12px;font-size:clamp(16px,2.8vw,21px);font-style:italic;color:#77574e}
+header button{margin-top:30px;background:var(--red);border:0;padding:14px 28px;border-radius:40px;color:white;font:500 15px 'Poppins',sans-serif;cursor:pointer;transition:.25s;box-shadow:0 6px 15px #a5263525}
+header button:hover{background:var(--green);transform:translateY(-3px)}
+section{max-width:1120px;margin:auto;padding:64px 24px}
+h2{font-size:clamp(34px,5vw,45px);color:var(--green);margin-bottom:10px;text-align:center}
+.section-intro{text-align:center;max-width:650px;margin:0 auto 28px;color:#78675d}
+.about-box{max-width:850px;margin:auto;text-align:center;background:#fff;border:1px solid #eadfc9;border-radius:22px;padding:28px;box-shadow:0 8px 22px #173e2b0c}
+.collection-banner{background:linear-gradient(120deg,var(--green),#246447);color:white;border-radius:24px;padding:28px 24px;text-align:center;margin:25px 0 30px;box-shadow:0 10px 25px #174b3520}
+.collection-banner h3{font-size:34px;color:#fff4d6}
+.collection-banner p{font-size:14px;color:#f7e9d3}
+.gallery,.cms-product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,235px),1fr));gap:24px;margin-top:26px}
+.card{background:#fff;border:1px solid #eee2d3;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #2c24100c;transition:transform .25s,box-shadow .25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);box-shadow:0 14px 26px #2c241018}
+.card img{width:100%;height:245px;object-fit:cover;display:block;background:#f6eee4}
+.card-content{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1}
+.card h3{font-size:28px;color:var(--green);line-height:1.15;margin-bottom:5px}
+.card p{font-size:14px;margin:5px 0 16px;flex:1}
+.price-tag{font-weight:600;color:var(--red);font-size:19px;margin:3px 0 7px}
+.see-more{display:inline-block;text-align:center;margin-top:auto;padding:10px 16px;border-radius:30px;text-decoration:none;color:#fff;background:var(--red);transition:.2s;font-size:14px;font-weight:500}
+.see-more:hover{background:var(--green)}
+.christmas-section{position:relative}
+.christmas-section h2{color:var(--red)}
+.christmas-grid .card{border-top:4px solid var(--red)}
+.christmas-grid .card:nth-child(even){border-top-color:var(--green)}
+.christmas-grid .card h3{color:var(--red)}
+.christmas-grid .card:nth-child(even) h3{color:var(--green)}
+.holly{color:var(--green);font-size:22px;text-align:center;margin-bottom:8px}
+.contact{text-align:center;background:#fff;border:1px solid #eadfc9;border-radius:24px;padding:35px 20px}
+.contact a{display:block;margin:10px 0;text-decoration:none;color:var(--green);overflow-wrap:anywhere}
+.contact a:hover{color:var(--red)}
+footer{background:var(--green);color:#fff5e6;padding:28px 18px;text-align:center;font-size:14px;margin-top:30px}
+footer span{color:#f4c7cf}
+.snowflake{position:fixed;top:-35px;z-index:2000;pointer-events:none;color:#fff;font-size:18px;text-shadow:0 1px 5px #91b8bf;animation:fall linear forwards;opacity:.9}
+@keyframes fall{0%{transform:translate3d(0,-5vh,0) rotate(0deg);opacity:0}10%{opacity:.9}90%{opacity:.8}100%{transform:translate3d(var(--drift),110vh,0) rotate(360deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
+@media(max-width:600px){header{padding:65px 18px}section{padding:48px 18px}nav{gap:10px 18px}nav a{font-size:13px}.card img{height:230px}}
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>
+if (window.netlifyIdentity) {
+  window.netlifyIdentity.on("init", user => {
+    if (!user) window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+  });
+}
+</script>
+</head>
+<body>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#products">Latest Products</a>
+  <a href="#christmas">Christmas Collection</a>
+  <a href="#gallery">All Categories</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<header id="home">
+  <span class="eyebrow">✧ A little handmade holiday magic ✧</span>
+  <h1>T Crochet</h1>
+  <p class="tagline">Handmade with love — wrapped in Christmas cheer</p>
+  <button onclick="document.getElementById('christmas').scrollIntoView({behavior:'smooth'})">Explore Christmas Collection 🎄</button>
+</header>
+
+<section id="about">
+  <h2>Welcome to T Crochet</h2>
+  <div class="about-box">
+    <p>I create handmade crochet pieces inspired by flowers, cozy textures, and timeless designs. Every piece is carefully made with creativity, patience, and love. This season, discover a little extra Christmas magic in every stitch. 🎁</p>
+  </div>
+</section>
+
+<section id="products">
+  <h2>Latest Shop Products</h2>
+  <p class="section-intro">Freshly made crochet creations from the shop.</p>
+  <div id="cms-products" class="cms-product-grid">
+    <p style="grid-column:1/-1;text-align:center">Loading latest products…</p>
+  </div>
+</section>
+
+<section id="christmas" class="christmas-section">
+  <div class="holly">❄ ✦ 🎄 ✦ ❄</div>
+  <h2>Christmas Collection</h2>
+  <p class="section-intro">A little festive magic, handmade with love.</p>
+  <div class="gallery christmas-grid">
+    <article class="card christmas-feature">
+      <img src="christmas-collection.jpg" alt="T Crochet Christmas Collection">
+      <div class="card-content">
+        <h3>Christmas Collection</h3>
+        <p>Explore our festive crochet creations: gingerbread, snowflakes, Christmas trees, and candy canes.</p>
+        <button type="button" class="see-more collection-toggle" aria-expanded="false" aria-controls="christmas-subcollections" onclick="toggleChristmasCollections(this)">View Collections ↓</button>
+      </div>
+    </article>
+  </div>
+  <div id="christmas-subcollections" class="gallery christmas-grid subcollections" hidden>
+    <article class="card"><img src="gingerbread1.jpg" alt="Crochet gingerbread collection preview"><div class="card-content"><h3>Gingerbread</h3><p>Sweet gingerbread-inspired crochet pieces.</p><a href="gingerbread.html" class="see-more">View More →</a></div></article>
+    <article class="card"><img src="snowflake1.jpg" alt="Crochet snowflake collection preview"><div class="card-content"><h3>Snowflakes</h3><p>Delicate handmade snowflake designs.</p><a href="snowflakes.html" class="see-more">View More →</a></div></article>
+    <article class="card"><img src="tree1.jpg" alt="Crochet Christmas tree collection preview"><div class="card-content"><h3>Christmas Trees</h3><p>Festive little trees, crocheted with love.</p><a href="trees.html" class="see-more">View More →</a></div></article>
+    <article class="card"><img src="candycane1.jpg" alt="Crochet candy cane collection preview"><div class="card-content"><h3>Candy Canes</h3><p>Classic Christmas candy-cane-inspired makes.</p><a href="candy-canes.html" class="see-more">View More →</a></div></article>
+  </div>
+</section>
+
+<style>
+.subcollections[hidden]{display:none}
+.collection-toggle{width:100%;font-family:'Poppins',sans-serif;font-size:14px;margin:8px 0 0}
+</style>
+<script>
+function toggleChristmasCollections(button){
+  const collections=document.getElementById('christmas-subcollections');
+  const expanded=button.getAttribute('aria-expanded')==='true';
+  button.setAttribute('aria-expanded',String(!expanded));
+  collections.hidden=expanded;
+  button.textContent=expanded?'View Collections ↓':'Hide Collections ↑';
+}
+</script>
+
+<section id="gallery">
+  <h2>My Categories</h2>
+  <p class="section-intro">Browse more handmade favourites all year round.</p>
+  <div class="gallery">
+    <article class="card"><img src="bag1.jpg" alt="Crochet bag"><div class="card-content"><h3>Crochet Bags</h3><div class="price-tag">From ₦8,000</div><p>Handmade bags created with unique stitches and beautiful details.</p><a href="bags.html" class="see-more">View All →</a></div></article>
+    <article class="card"><img src="flower5.jpg" alt="Crochet flowers"><div class="card-content"><h3>Crochet Flowers</h3><div class="price-tag">From ₦3,500</div><p>Soft handmade flowers inspired by nature and creativity.</p><a href="flowers.html" class="see-more">View All →</a></div></article>
+    <article class="card"><img src="amigurumi1.jpg" alt="Crochet amigurumi"><div class="card-content"><h3>Amigurumi</h3><div class="price-tag">From ₦5,000</div><p>Cute handmade crochet characters and creative pieces.</p><a href="amigurumi.html" class="see-more">View All →</a></div></article>
+    <article class="card"><img src="wearable1.jpg" alt="Crochet wearables"><div class="card-content"><h3>Wearables</h3><div class="price-tag">From ₦12,000</div><p>Crochet clothing pieces made with comfort and style.</p><a href="wearables.html" class="see-more">View All →</a></div></article>
+    <article class="card"><img src="other1.jpg" alt="Other crochet items"><div class="card-content"><h3>Other Creations</h3><div class="price-tag">From ₦2,500</div><p>A collection of different handmade crochet projects.</p><a href="other.html" class="see-more">View All →</a></div></article>
+    <article class="card"><img src="rose1.jpg" alt="Crochet rose"><div class="card-content"><h3>Rose Collection</h3><div class="price-tag">From ₦4,000</div><p>Detailed crochet roses made with care and attention.</p><a href="roses.html" class="see-more">View All →</a></div></article>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="contact">
+    <h2>Contact Me</h2>
+    <p>Interested in a custom crochet order or want to ask a question?</p>
+    <a href="https://instagram.com/t_crochetz" target="_blank" rel="noopener noreferrer">Instagram: @t_crochetz</a>
+    <a href="https://www.youtube.com/@t_crochetz" target="_blank" rel="noopener noreferrer">YouTube: @t_crochetz</a>
+    <a href="mailto:t.crochetz12@gmail.com">Email: t.crochetz12@gmail.com</a>
+    <a href="https://www.tiktok.com/@t_crochetz" target="_blank" rel="noopener noreferrer">TikTok: @t_crochetz</a>
+  </div>
+</section>
+
+<footer><p>© 2026 T Crochet. <span>Handmade with love</span> 🎄</p></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+<script>
+async function loadCMSProducts() {
+  const container = document.getElementById('cms-products');
+  const repo = 'irene-h3artz/t_crochetz-';
+  const folderPath = 'content/products';
+  let filesToFetch = [];
+
+  try {
+    const treeRes = await fetch(`https://api.github.com/repos/${repo}/contents/${folderPath}`);
+    if (treeRes.ok) {
+      const files = await treeRes.json();
+      filesToFetch = files.filter(f => f.name.endsWith('.md')).map(f => f.download_url);
+    }
+  } catch (e) {
+    console.log('GitHub API fetch failed; trying site fallback.');
+  }
+
+  if (filesToFetch.length === 0) {
+    try {
+      const localRes = await fetch('/content/products/index.json');
+      if (localRes.ok) filesToFetch = await localRes.json();
+    } catch (e) {
+      console.log('Local product index unavailable.');
+    }
+  }
+
+  if (!Array.isArray(filesToFetch) || filesToFetch.length === 0) {
+    container.innerHTML = '<p style="grid-column:1/-1;text-align:center">No published products yet. Check back soon!</p>';
+    return;
+  }
+
+  container.innerHTML = '';
+  for (const item of filesToFetch) {
+    try {
+      const url = typeof item === 'string' ? item : item.download_url;
+      if (!url) continue;
+      const res = await fetch(url);
+      if (!res.ok) continue;
+      const rawText = await res.text();
+      const match = rawText.match(/^---\\s*\\n([\\s\\S]*?)\\n---\\s*\\n?([\\s\\S]*)$/);
+      if (!match) continue;
+      const product = jsyaml.load(match[1]) || {};
+      const bodyContent = match[2].trim();
+      const price = product.price !== undefined && product.price !== null && product.price !== ''
+        ? `₦${Number(product.price).toLocaleString('en-NG')}` : 'Price on request';
+
+      const card = document.createElement('article');
+      card.className = 'card';
+      const content = document.createElement('div');
+      content.className = 'card-content';
+
+      if (product.image) {
+        const img = document.createElement('img');
+        img.src = product.image;
+        img.alt = product.title || 'Handmade crochet product';
+        card.appendChild(img);
+      }
+      const title = document.createElement('h3');
+      title.textContent = product.title || 'Handmade Creation';
+      content.appendChild(title);
+      if (product.category) {
+        const badge = document.createElement('span');
+        badge.textContent = product.category;
+        badge.style.cssText = 'display:inline-block;margin:5px 0;padding:3px 12px;background:#e3efe2;color:#174b35;border-radius:15px;font-size:12px;width:fit-content';
+        content.appendChild(badge);
+      }
+      const priceEl = document.createElement('div');
+      priceEl.className = 'price-tag';
+      priceEl.textContent = price;
+      content.appendChild(priceEl);
+      if (bodyContent) {
+        const description = document.createElement('p');
+        description.textContent = bodyContent.replace(/[#*_`>]/g, '').slice(0, 220);
+        content.appendChild(description);
+      }
+      const link = document.createElement('a');
+      link.className = 'see-more';
+      link.href = product.image || '#products';
+      link.target = product.image ? '_blank' : '_self';
+      link.rel = 'noopener noreferrer';
+      link.textContent = 'View Item ↗';
+      content.appendChild(link);
+      card.appendChild(content);
+      container.appendChild(card);
+    } catch (err) {
+      console.error('Error rendering product item:', err);
+    }
+  }
+  if (!container.children.length) {
+    container.innerHTML = '<p style="grid-column:1/-1;text-align:center">No published products yet. Check back soon!</p>';
+  }
+}
+document.addEventListener('DOMContentLoaded', loadCMSProducts);
+
+// Gentle falling snow; limited number of flakes to keep the page lightweight.
+if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  const snowSymbols = ['❄', '❅', '❆'];
+  function makeSnowflake() {
+    const flake = document.createElement('span');
+    flake.className = 'snowflake';
+    flake.textContent = snowSymbols[Math.floor(Math.random() * snowSymbols.length)];
+    flake.style.left = Math.random() * 100 + 'vw';
+    flake.style.fontSize = (10 + Math.random() * 13) + 'px';
+    flake.style.setProperty('--drift', (Math.random() * 140 - 70) + 'px');
+    flake.style.animationDuration = (7 + Math.random() * 7) + 's';
+    document.body.appendChild(flake);
+    setTimeout(() => flake.remove(), 15000);
+  }
+  for (let i = 0; i < 14; i++) setTimeout(makeSnowflake, i * 300);
+  setInterval(makeSnowflake, 650);
+}
+</script>
+</body>
+</html>

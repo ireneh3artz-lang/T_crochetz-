@@ -1,61 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>T Crochet | Snowflake Collection</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Snowflake Collection | T Crochet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{background:#fffaf0;color:#51433b;font-family:Poppins,sans-serif;line-height:1.7}
-header{text-align:center;padding:55px 18px;background:linear-gradient(135deg,#e3efe2,#fffaf0,#f5dce0);border-bottom:4px solid #d7ad58}
-h1,h2{font-family:'Cormorant Garamond',serif}
-h1{font-size:clamp(42px,7vw,64px);color:#174b35;line-height:1.1}
-header p{margin-top:10px;color:#77574e}
-nav{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;padding:14px;background:#fffaf0;position:sticky;top:0;box-shadow:0 2px 10px #0000000d}
-nav a{color:#174b35;text-decoration:none;font-size:14px;font-weight:600}
-main{max-width:1000px;margin:auto;padding:42px 20px 65px}
-.intro{text-align:center;max-width:650px;margin:0 auto 28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px}
-.card{background:white;border:1px solid #eadfc9;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px #2c24100c}
-.card img{width:100%;height:270px;object-fit:cover;display:block;background:#f4eee4}
-.card h2{font-size:27px;color:#174b35;padding:15px 17px 0}
-.card p{font-size:14px;padding:0 17px 18px}
-.hidden-slot{display:none}
-button,.back{display:inline-block;border:0;border-radius:28px;padding:12px 22px;background:#a52635;color:white;font:500 14px Poppins,sans-serif;text-decoration:none;cursor:pointer;margin:20px 0}
-button:hover,.back:hover{background:#174b35}
-.actions{text-align:center}
-footer{background:#174b35;color:#fff5e6;text-align:center;padding:25px;font-size:13px}
-</style>
-</head>
-<body>
-<nav><a href="index.html">Home</a><a href="index.html#christmas">Christmas Collection</a></nav>
-<header><h1>Snowflake Collection 🎄</h1><p>Handmade with love by T Crochet</p></header>
-<main>
-<p class="intro">Delicate crochet snowflakes for a snowy, magical holiday feel.</p>
-<div class="grid">
-<article class="card">
-<img src="snowflake1.jpg" alt="Snowflake Collection design 1" onerror="this.style.display='none'">
-<h2>Snowflake Design 1</h2><p>Featured crochet design.</p>
-</article>
-<article class="card hidden-slot" id="extra-slot">
-<img src="snowflake2.jpg" alt="Snowflake Collection design 2" onerror="this.style.display='none'">
-<h2>Snowflake Design 2</h2><p>Another design from this collection.</p>
-</article>
-</div>
-<div class="actions"><button id="more-button" type="button" onclick="toggleMore()">View More ↓</button><br><a class="back" href="index.html#christmas">← Back to Christmas Collection</a></div>
-</main>
-<footer>© 2026 T Crochet · Handmade with love ❤️💚</footer>
-<script>
-function toggleMore(){
- const extra=document.getElementById('extra-slot');
- const button=document.getElementById('more-button');
- const show=extra.style.display!=='block';
- extra.style.display=show?'block':'none';
- button.textContent=show?'Show Less ↑':'View More ↓';
-}
-</script>
-</body>
-</html>
+:root{--cream:#fffaf0;--green:#174b35;--red:#a52635;--gold:#d7ad58;--text:#51433b}
+*{box-sizing:border-box;margin:0;padding:0}body{background:var(--cream);color:var(--text);font-family:'Poppins',sans-serif;line-height:1.7}
+nav{padding:16px;text-align:center;background:#fffaf0;border-bottom:1px solid #e8d8b8}nav a{color:var(--green);font-weight:600;text-decoration:none}
+header{text-align:center;padding:58px 20px;background:linear-gradient(135deg,#e3efe2,#fffaf0,#f5dce0);border-bottom:5px solid var(--gold)}.eyebrow{color:var(--red);letter-spacing:2px;font-size:12px;text-transform:uppercase}h1,h2{font-family:'Cormorant Garamond',serif}h1{font-size:clamp(42px,8vw,66px);color:var(--green);line-height:1.1;margin:10px 0}header p{max-width:600px;margin:auto}main{max-width:850px;margin:auto;padding:45px 20px}.card{background:white;border:1px solid #eee2d3;border-radius:22px;overflow:hidden;box-shadow:0 8px 20px #2c24100c;max-width:540px;margin:0 auto}.card img{display:block;width:100%;height:auto;max-height:520px;object-fit:cover;background:#f6eee4}.caption{padding:20px;text-align:center}.caption h2{font-size:32px;color:var(--green)}.back{display:inline-block;margin-top:26px;background:var(--red);color:white;text-decoration:none;padding:11px 22px;border-radius:30px}footer{background:var(--green);color:#fff5e6;text-align:center;padding:22px;margin-top:20px}
+</style></head><body>
+<nav><a href="index.html#christmas">← Back to T Crochet Christmas Collection</a></nav>
+<header><span class="eyebrow">✧ Handmade holiday magic ✧</span><h1>Snowflake Collection</h1><p>Delicate crochet snowflakes for a little winter magic.</p></header>
+<main><article class="card"><img src="snowflake2.jpg" alt="Snowflake crochet design"><div class="caption"><h2>Snowflake</h2><p>Delicate crochet snowflakes for a little winter magic.</p></div></article><p style="text-align:center"><a class="back" href="index.html#christmas">← Back to Christmas Collection</a></p></main>
+<footer>© 2026 T Crochet · Handmade with love 🎄</footer>
+</body></html>
